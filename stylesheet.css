@@ -1,0 +1,24 @@
+
+.Knop {
+    text-align: center;
+    width: 600px;
+    font-family: Montserrat;
+    font-size: 48px;
+    background: url(afbeeldingen/wood.png);
+    border-radius: 20px;
+    color: #FFFFFF;
+    margin: 15px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+  }
+
+Body {
+    background: url(Afbeeldingen/pokertafel.jpg);
+    height: 100%;
+}
