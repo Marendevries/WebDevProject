@@ -22,3 +22,30 @@ Body {
     background: url(Afbeeldingen/pokertafel.jpg);
     height: 100%;
 }
+
+.NewTournament {
+    text-align: center;
+    width: 600px;
+    font-family: Montserrat;
+    font-size: 48px;
+    background-image: url(afbeeldingen/wood.png);
+    border-radius: 20px;
+    color: #FFFFFF;
+    margin: 15px;
+}
+
+.ExistingTournament {
+text-align: center;
+width: 600px;
+font-family: Montserrat;
+font-size: 48px;
+background-image: url(afbeeldingen/wood.png);
+border-radius: 20px;
+color: #FFFFFF;
+margin: 15px;
+}
+
+.Back{
+    vertical-align: top;
+    align-items: left;
+}
