@@ -9,7 +9,6 @@
     color: #FFFFFF;
     margin: 15px;
 }
-
 .container {
     display: flex;
     justify-content: center;
@@ -21,4 +20,33 @@
 Body {
     background: url(Afbeeldingen/pokertafel.jpg);
     height: 100%;
+}
+.card{
+background-color: black;
+margin: 0 auto;
+float: none;
+margin-bottom: 20px;
+margin-top: 20px;
+border-radius: 20px;
+
+}
+.card-text{
+    color:white;
+    font-family: Montserrat;
+}
+.card-title{
+    color: white;
+    font-family: Montserrat;
+    font-size: 40px;
+}
+.btn{
+    text-align: center;
+    width: 800px;
+    font-family: Montserrat;
+    font-size: 35px;
+    background: url(afbeeldingen/wood.png);
+    border-radius: 20px;
+    color: #FFFFFF;
+    margin: 50px;
+    background-size: cover;
 }
