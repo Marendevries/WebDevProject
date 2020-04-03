@@ -9,13 +9,12 @@
 <title>Page Title</title>
 </head>
 <body>
-
   <div class="container">
-    <div><button class="Knop">Host Toernooi</button> </div>
-    <div><button class="Knop">Join Toernooi</button> </div>
-    <div><button class="Knop">Leaderboard</button> </div>
+    <div>
+    <button class="Knop" name="HostToernooi" onClick="document.location.href='Hostmenu.php'"> Host Toernooi </button> 
     </div>
-
+    <div><button class="Knop" name="JoinToernooi">Join Toernooi</button> </div>
+    <div><button class="Knop"name="Leaderbord">Leaderboard</button> </div>
+    </div>
 </body>
 </html>
-
