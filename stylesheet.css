@@ -1,78 +1,39 @@
+    
+    .ntp-contents{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        position: relative;
+    }
 
-.Knop {
-    text-align: center;
-    width: 600px;
-    font-family: Montserrat;
-    font-size: 48px;
-    background: url(afbeeldingen/wood.png);
-    border-radius: 20px;
-    color: #FFFFFF;
-    margin: 15px;
-}
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
-  }
+    .fake-container{
+        margin: 0 auto 0 auto;
+            margin-top: 20%;
+            margin-right: auto;
+            margin-bottom: 0px;
+            margin-left: auto;
+        min-width: 410px;
+        width: var(--content-width);
+    }
 
-Body {
-    background: url(Afbeeldingen/pokertafel.jpg);
-    height: 100%;
-}
-.card{
-background-color: black;
-margin: 0 auto;
-float: none;
-margin-bottom: 20px;
-margin-top: 20px;
-border-radius: 20px;
+    .NieuweSpeler , .BestaandeSpeler {
+        margin: 0 auto 0 auto;
+            margin-top: 0px;
+            margin-right: auto;
+            margin-bottom: 0px;
+            margin-left: 25%;
+        min-width: 410px;
+        width: var(--content-width);
 
-}
-.card-text{
-    color:white;
-    font-family: Montserrat;
-}
-.card-title{
-    color: white;
-    font-family: Montserrat;
-    font-size: 40px;
-}
-.btn{
-    text-align: center;
-    width: 800px;
-    font-family: Montserrat;
-    font-size: 35px;
-    background: url(afbeeldingen/wood.png);
-    border-radius: 20px;
-    color: #FFFFFF;
-    margin: 50px;
-    background-size: cover;
-}
-.NewTournament {
-    text-align: center;
-    width: 600px;
-    font-family: Montserrat;
-    font-size: 48px;
-    background-image: url(afbeeldingen/wood.png);
-    border-radius: 20px;
-    color: #FFFFFF;
-    margin: 15px;
-}
+        width: 500px;
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 48px;
+        background: url(afbeeldingen/ButtonBackground.png);
+        border-radius: 20px;
+        color: #FFFFFF; 
+    }
 
-.ExistingTournament {
-text-align: center;
-width: 600px;
-font-family: Montserrat;
-font-size: 48px;
-background-image: url(afbeeldingen/wood.png);
-border-radius: 20px;
-color: #FFFFFF;
-margin: 15px;
-}
-
-.Back{
-    vertical-align: top;
-    align-items: left;
-}
+    Body {
+        background: url(afbeeldingen/pokertafel.jpg);
+    }
