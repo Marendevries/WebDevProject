@@ -37,3 +37,169 @@
     Body {
         background: url(afbeeldingen/pokertafel.jpg);
     }
+
+.button {
+    font-family: Montserrat;
+    font-size: 12px;
+    background: url(afbeeldingen/wood.jpg);
+    border-radius: 20px;
+    color: #FFFFFF;
+    margin: 10px;
+    font-family: Montserrat;
+    font-weight: 600; 
+    }
+
+.card-group {
+    margin: 15px;
+}
+
+.card-title {
+    font-family: Montserrat;
+    font-size: 28px;
+    background: white;
+    border-radius: 20px;
+    color: black;
+    margin: 10px;
+    font-family: Montserrat;
+    font-weight: 600; 
+    text-align: center;
+}
+
+.card-body {
+    background-color: black;
+    color: white;
+}
+
+.card {
+    margin: 5px;    
+}
+
+.edit {
+    font-family: Montserrat;
+    font-size: 12px;
+    background: url(afbeeldingen/wood.jpg);
+    border-radius: 20px;
+    color: #FFFFFF;
+    margin: 10px;
+    font-family: Montserrat;
+    font-weight: 600; 
+    text-align: center; 
+    margin-left: 50px;
+}
+
+.card-body.menu {
+    background-color: black;
+    color: white;   
+}
+
+.Menuknop {
+    font-family: Montserrat;
+    font-size: 28px;
+    background: url(afbeeldingen/wood.jpg);
+    border-radius: 20px;
+    color: #FFFFFF;
+    margin: 10px;
+    font-family: Montserrat;
+    font-weight: 600;
+    width: 95%;
+   
+}
+
+.back {
+    font-family: Montserrat;
+    font-size: 18px;
+    background: url(afbeeldingen/wood.jpg);
+    border-radius: 20px;
+    color: #FFFFFF;
+    margin: 10px;
+    font-family: Montserrat;
+    font-weight: 600; 
+    text-align: center; 
+    margin-left: 50px;
+}
+
+.Timebtn {
+    font-family: Montserrat;
+    font-size: 20px;
+    background: url(afbeeldingen/wood.jpg);
+    border-radius: 20px;
+    color: #FFFFFF;
+    margin: 10px;
+    font-family: Montserrat;
+    font-weight: 600; 
+    text-align: center; 
+    margin-left: 50px;
+    width: 25%;
+}
+
+#submitblind {
+    font-family: Montserrat;
+    font-size: 12px;
+    background: url(afbeeldingen/wood.jpg);
+    border-radius: 20px;
+    color: #FFFFFF;
+    font-family: Montserrat;
+    font-weight: 600; 
+    text-align: center; 
+    margin-left: 10px;
+}
+
+#blindfield {
+    margin-left: 25px;
+    margin: 10px;
+}
+
+#blindellips {
+    margin-left: 50px;
+}
+
+#rebuybox {
+    margin-left: 50px;
+}
+
+.rulebutton {
+    font-family: Montserrat;
+    font-size: 24px;
+    background: url(afbeeldingen/wood.jpg);
+    border-radius: 20px;
+    color: #FFFFFF;
+    font-family: Montserrat;
+    font-weight: 600; 
+    text-align: center; 
+    margin: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.timebutton {
+    font-family: Montserrat;
+    font-size: 24px;
+    background: url(afbeeldingen/wood.jpg);
+    border-radius: 20px;
+    color: #FFFFFF;
+    font-family: Montserrat;
+    font-weight: 600; 
+    text-align: center; 
+    margin: 15px;
+    padding-left: 20px;
+    padding-right: 100px;
+}
+
+.Knop {
+    text-align: center;
+    width: 600px;
+    font-family: Montserrat;
+    font-size: 48px;
+    background: url(afbeeldingen/wood.jpg);
+    border-radius: 20px;
+    color: #FFFFFF;
+    margin: 15px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+  }
