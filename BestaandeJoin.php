@@ -17,10 +17,13 @@
           
         </form><br>
     <div>
-    <button class="Knop" name="Join" type="submit" onClick="document.location.href='speleroverzicht.php'"> Join </button> 
+    <button class="Knop" name="Join" type="submit" onClick="document.location.href='speleroverzicht.php'"> Join </button>
+   
+    <a href="Spelermenu.php"><button class="back">Terug</button></a>
     </div>
   </div>
     </div>
     </div>
+    
 </body>
 </html>
