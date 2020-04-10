@@ -20,10 +20,10 @@
         <img src="Afbeeldingen/person.png"> Placeholder </i><br>
         <img src="Afbeeldingen/person.png"> Placeholder </i><br>
         <img src="Afbeeldingen/person.png"> Placeholder </i><br>
-        <a href="spelregels.html"><button class=rulebutton>Spelregels</button></a>
-        <a href="spelregels.html"><button class=timebutton>Tijd:</button></a>
-        <a href="fichesspeler.html"><button class=rulebutton>fiches</button></a>
-        <a href="Hoofdmenu.html"><button class=rulebutton>Stoppen</button></a><br>
+        <a href="spelregelsspeler.php"><button class=rulebutton>Spelregels</button></a>
+        <button class=timebutton>Tijd:</button>
+        <a href="fichesspeler.php"><button class=rulebutton>fiches</button></a>
+        <a href="Hoofdmenu.php"><button class=rulebutton>Stoppen</button></a><br>
       </div>
     </div>
   </div>

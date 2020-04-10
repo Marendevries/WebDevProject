@@ -203,3 +203,36 @@
     height: 100vh;
     flex-direction: column;
   }
+
+  .NewTournament {
+    text-align: center;
+    width: 600px;
+    font-family: Montserrat;
+    font-size: 48px;
+    background: url(afbeeldingen/wood.jpg);
+    border-radius: 20px;
+    color: #FFFFFF;
+    margin: 15px;
+}
+
+.NewTournament {
+    text-align: center;
+    width: 600px;
+    font-family: Montserrat;
+    font-size: 48px;
+    background: url(afbeeldingen/wood.jpg);
+    border-radius: 20px;
+    color: #FFFFFF;
+    margin: 15px;
+}
+
+.ExistingTournament {
+    text-align: center;
+    width: 600px;
+    font-family: Montserrat;
+    font-size: 48px;
+    background: url(afbeeldingen/wood.jpg);
+    border-radius: 20px;
+    color: #FFFFFF;
+    margin: 15px;
+}

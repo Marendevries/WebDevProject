@@ -7,17 +7,14 @@
   <link rel="stylesheet" href="stylesheet.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <head>
-  <link rel="stylesheet" href="stylesheet.css">
 <title>Hostmenu</title>
 </head>
 <body>
 
 <div class="container">
-    <div><button class="NewTournament">Nieuw Toernooi</button> </div>
-    <div><button class="ExistingTournament">Bestaand Toernooi</button> </div>
+    <div><button class="Knop">Nieuwe speler</button> </div>
+    <div><button class="Knop">Bestaand speler</button> </div>
+    <div><button class="Knop" onClick="document.location.href='Hoofdmenu.php'">Terug</button></div>
 </div>
-
-<button></button>
-
 </body>
 </html>

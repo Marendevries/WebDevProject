@@ -12,13 +12,16 @@
   <div class="card-group">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Waarde fiches</h5>
-        <img src="Afbeeldingen/Ellipse 8.png"> Placeholder </i><button class=edit>aanpassen </button><br>
-        <img src="Afbeeldingen/Ellipse 9.png"> Placeholder </i><button class=edit>aanpassen </button><br>
-        <img src="Afbeeldingen/Ellipse 10.png"> Placeholder </i><button class=edit>aanpassen </button><br>
-        <img src="Afbeeldingen/Ellipse 11.png"> Placeholder </i><button class=edit>aanpassen </button><br>
-        <img src="Afbeeldingen/Ellipse 12.png"> Placeholder </i><button class=edit>aanpassen </button><br>
-        <a href="hostoverzicht.html"><button class=back>Terug</button></a>
+        <h5 class="card-title">Spelernaam</h5>
+        <form>
+            <label id="rebuybox"> Ingekocht </label>
+            <input type="checkbox" value="Ingekocht">
+            <br>
+            <label id="rebuybox"> Rebuy </label>
+            <input type="checkbox" value="Rebuy">
+            <br>           
+          </form>
+        <a href="hostoverzicht.php"><button class=back>Terug</button></a>
       </div>
     </div>
 </div>

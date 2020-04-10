@@ -27,24 +27,24 @@
     <div class="card">
       <div class="card-body menu">
         <h5 class="card-title">Opties</h5>
-        <a href="tafelkeuze.html"><button class=Menuknop>Tafel Selecteren</button></a><br>
-        <a href="Tijdmenu.html"><button class=Menuknop>Tijd</button></a><br>
-        <a href="fiches.html"><button class=Menuknop>Waarde fiches</button></a><br>
-        <a href="blinds.html"><button class=Menuknop>Blinds</button></a><br>
-        <a href="Spelregels.html"><button class=Menuknop>Spelregels</button></a><br>
+        <a href="tafelkeuze.php"><button class=Menuknop>Tafel Selecteren</button></a><br>
+        <a href="Tijdmenu.php"><button class=Menuknop>Tijd</button></a><br>
+        <a href="fiches.php"><button class=Menuknop>Waarde fiches</button></a><br>
+        <a href="blinds.php"><button class=Menuknop>Blinds</button></a><br>
+        <a href="Spelregels.php"><button class=Menuknop>Spelregels</button></a><br>
         <button class=Menuknop>Opslaan</button><br>
-        <a href="Hoofdmenu.html"><button onclick="return confirm('Weet je zeker dat je wilt stoppen?')" class=Menuknop>Stoppen</button></a><br>
+        <a href="Hoofdmenu.php"><button onclick="return confirm('Weet je zeker dat je wilt stoppen?')" class=Menuknop>Stoppen</button></a><br>
       </div>
     </div>
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Huidige Tafel</h5>
-        <img src="Afbeeldingen/person.png"> Placeholder </i><a href="playeredit.html"><button class=edit> Selecteren </button></a><br>
-        <img src="Afbeeldingen/person.png"> Placeholder </i><a href="playeredit.html"><button class=edit> Selecteren </button></a><br>
-        <img src="Afbeeldingen/person.png"> Placeholder </i><a href="playeredit.html"><button class=edit> Selecteren </button></a><br>
-        <img src="Afbeeldingen/person.png"> Placeholder </i><a href="playeredit.html"><button class=edit> Selecteren </button></a><br>
-        <img src="Afbeeldingen/person.png"> Placeholder </i><a href="playeredit.html"><button class=edit> Selecteren </button></a><br>
-        <img src="Afbeeldingen/person.png"> Placeholder </i><a href="playeredit.html"><button class=edit> Selecteren </button></a><br>
+        <img src="Afbeeldingen/person.png"> Placeholder </i><a href="playeredit.php"><button class=edit> Selecteren </button></a><br>
+        <img src="Afbeeldingen/person.png"> Placeholder </i><a href="playeredit.php"><button class=edit> Selecteren </button></a><br>
+        <img src="Afbeeldingen/person.png"> Placeholder </i><a href="playeredit.php"><button class=edit> Selecteren </button></a><br>
+        <img src="Afbeeldingen/person.png"> Placeholder </i><a href="playeredit.php"><button class=edit> Selecteren </button></a><br>
+        <img src="Afbeeldingen/person.png"> Placeholder </i><a href="playeredit.php"><button class=edit> Selecteren </button></a><br>
+        <img src="Afbeeldingen/person.png"> Placeholder </i><a href="playeredit.php"><button class=edit> Selecteren </button></a><br>
       </div>
     </div>
   </div>

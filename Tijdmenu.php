@@ -12,13 +12,13 @@
   <div class="card-group">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Tafel Selecteren</h5>
-        <img src="Afbeeldingen/table.png"> Placeholder </i><button class=edit> Selecteren </button><br>
-        <img src="Afbeeldingen/table.png"> Placeholder </i><button class=edit> Selecteren </button><br>
-        <img src="Afbeeldingen/table.png"> Placeholder </i><button class=edit> Selecteren </button><br>
-        <img src="Afbeeldingen/table.png"> Placeholder </i><button class=edit> Selecteren </button><br>
-        <img src="Afbeeldingen/table.png"> Placeholder </i><button class=edit> Selecteren </button><br>
-        <a href="hostoverzicht.html"><button class=back>Terug</button></a>
+        <h5 class="card-title">Tijd</h5>
+        <button class="Timebtn">Tijd</button><br>
+        <button class="Timebtn">Tijd starten</button><br>
+        <button class="Timebtn">Tijd herstarten</button><br>
+        <button class="Timebtn">Tijd pauzeren</button><br>
+        <button class="Timebtn">Tijd stoppen</button><br>
+        <a href="hostoverzicht.php"><button class=back>Terug</button></a>
       </div>
     </div>
 </div>

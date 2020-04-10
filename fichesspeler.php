@@ -18,7 +18,7 @@
         <img src="Afbeeldingen/Ellipse 10.png"> Placeholder </i><br>
         <img src="Afbeeldingen/Ellipse 11.png"> Placeholder </i><br>
         <img src="Afbeeldingen/Ellipse 12.png"> Placeholder </i><br>
-        <a href="speleroverzicht.html"><button class=back>Terug</button></a>
+        <a href="speleroverzicht.php"><button class=back>Terug</button></a>
       </div>
     </div>
 </div>

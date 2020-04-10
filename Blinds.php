@@ -12,16 +12,18 @@
   <div class="card-group">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Spelernaam</h5>
+        <h5 class="card-title">Waarde fiches</h5>
         <form>
-            <label id="rebuybox"> Ingekocht </label>
-            <input type="checkbox" value="Ingekocht">
-            <br>
-            <label id="rebuybox"> Rebuy </label>
-            <input type="checkbox" value="Rebuy">
-            <br>           
-          </form>
-        <a href="hostoverzicht.html"><button class=back>Terug</button></a>
+            <img id="blindellips" src="Afbeeldingen/Ellipse 13.png"> Inzet Big blind </i>
+            <input id="blindfield" type="search" name="search" required />
+            <input id="submitblind" value="Aanpassen" type="submit" />
+        </form><br>
+          <form>
+            <img id="blindellips" src="Afbeeldingen/Ellipse 10.png"> Inzet Small blind </i>
+            <input id="blindfield" type="search" name="search" required />
+            <input id="submitblind" value="Aanpassen" type="submit" />
+        </form><br>
+        <a href="hostoverzicht.php"><button class=back>Terug</button></a>
       </div>
     </div>
 </div>
