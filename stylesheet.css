@@ -74,7 +74,7 @@
     margin: 5px;    
 }
 
-.edit {
+.edit{
     font-family: Montserrat;
     font-size: 12px;
     background: url(afbeeldingen/wood.jpg);
@@ -144,12 +144,12 @@
     margin-left: 10px;
 }
 
-#blindfield {
+#blindfield{
     margin-left: 25px;
     margin: 10px;
 }
 
-#blindellips {
+#blindellips{
     margin-left: 50px;
 }
 
@@ -235,4 +235,9 @@
     border-radius: 20px;
     color: #FFFFFF;
     margin: 15px;
+}
+.namespace{
+    font-family: Montserrat;
+    font-size: 48px;
+    
 }
