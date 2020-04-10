@@ -12,8 +12,8 @@
 <body>
 
 <div class="container">
-    <div><button class="Knop">Bestaande host</button></div>
-    <div><button class="Knop">Nieuwe host</button> </div>
+    <div><button class="Knop" onClick="document.location.href='selecthost.php'">Bestaande host</button></div>
+    <div><button class="Knop" onClick="document.location.href='createhost.php'">Nieuwe host</button> </div>
     <div><button class="Knop" onClick="document.location.href='Hoofdmenu.php'">Terug</button></div>
 </div>
 </body>
