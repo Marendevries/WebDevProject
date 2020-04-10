@@ -12,18 +12,13 @@
   <div class="card-group">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Waarde fiches</h5>
-        <form class=>
-            <img id="blindellips" src="Afbeeldingen/Ellipse 13.png"> Inzet Big blind </i>
-            <input id="blindfield" required />
-            <input id="submitblind" value="Aanpassen"/>
-        </form><br>
-          <form>
-            <img id="blindellips" src="Afbeeldingen/Ellipse 10.png"> Inzet Small blind </i>
-            <input id="blindfield" required />
-            <input id="submitblind" value="Aanpassen"/>
-        </form><br>
-        <a href="hostoverzicht.php"><button class=back>Terug</button></a>
+        <h5 class="card-title">Selecteer bestaande host</h5>
+        <form id="newhostfield">
+            <p>Voer hier uw bestaande hostnaam in</p>
+            <input name=newhostfield required />
+            <input id="submitblind" value="Selecteren" type="submit" />
+        </form><br>    
+        <a href="hostmenu.php"><button class=back>Terug</button></a>
       </div>
     </div>
 </div>
