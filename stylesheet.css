@@ -1,53 +1,53 @@
-    
-    .ntp-contents{
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        position: relative;
-    }
 
-    .fake-container{
-        margin: 0 auto 0 auto;
-            margin-top: 20%;
-            margin-right: auto;
-            margin-bottom: 0px;
-            margin-left: auto;
-        min-width: 410px;
-        width: var(--content-width);
-    }
+.ntp-contents{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
 
-    .NieuweSpeler , .BestaandeSpeler {
-        margin: 0 auto 0 auto;
-            margin-top: 0px;
-            margin-right: auto;
-            margin-bottom: 0px;
-            margin-left: 25%;
-        min-width: 410px;
-        width: var(--content-width);
+.fake-container{
+    margin: 0 auto 0 auto;
+    margin-top: 20%;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    min-width: 410px;
+    width: var(--content-width);
+}
 
-        width: 500px;
-        text-align: center;
-        font-family: Montserrat;
-        font-size: 48px;
-        background: url(afbeeldingen/ButtonBackground.png);
-        border-radius: 20px;
-        color: #FFFFFF; 
-    }
+.NieuweSpeler , .BestaandeSpeler {
+    margin: 0 auto 0 auto;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: 25%;
+    min-width: 410px;
+    width: var(--content-width);
 
-    Body {
-        background: url(afbeeldingen/pokertafel.jpg);
-    }
+    width: 500px;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 48px;
+    background: url(Afbeeldingen/ButtonBackground.png);
+    border-radius: 20px;
+    color: #FFFFFF;
+}
+
+Body {
+    background: url(Afbeeldingen/pokertafel.jpg);
+}
 
 .button {
     font-family: Montserrat;
     font-size: 12px;
-    background: url(afbeeldingen/wood.jpg);
+    background: url(Afbeeldingen/wood.jpg);
     border-radius: 20px;
     color: #FFFFFF;
     margin: 10px;
     font-family: Montserrat;
-    font-weight: 600; 
-    }
+    font-weight: 600;
+}
 
 .card-group {
     margin: 15px;
@@ -61,8 +61,9 @@
     color: black;
     margin: 10px;
     font-family: Montserrat;
-    font-weight: 600; 
+    font-weight: 600;
     text-align: center;
+
 }
 
 .card-body {
@@ -70,64 +71,101 @@
     color: white;
 }
 
-.card {
-    margin: 5px;    
+.card-body-blinds{
+    text-align: center;
+    display: inline-block;
+    background-color: black;
+    color: white;
+
 }
 
-.edit{
+.card-body-blinds2 {
+    background-color: black;
+    color: white;
+    width: 50rem;
+}
+.card-body-tijd {
+    background-color: black;
+    color: white;
+    width: 50rem;
+    align-content: center;
+}
+
+.card {
+    margin: 10px;
+}
+
+.elips {
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 50px;
+}
+
+.edit {
     font-family: Montserrat;
     font-size: 12px;
-    background: url(afbeeldingen/wood.jpg);
+    background: url(Afbeeldingen/wood.jpg);
     border-radius: 20px;
     color: #FFFFFF;
     margin: 10px;
     font-family: Montserrat;
-    font-weight: 600; 
-    text-align: center; 
+    font-weight: 600;
+    text-align: center;
     margin-left: 50px;
+    float: right;
+}
+
+.edit2 {
+    font-family: Montserrat;
+    font-size: 12px;
+    border-radius: 20px;
+    margin: 10px;
+    font-family: Montserrat;
+    font-weight: 600;
+    text-align: center;
 }
 
 .card-body.menu {
     background-color: black;
-    color: white;   
+    color: white;
 }
 
 .Menuknop {
     font-family: Montserrat;
     font-size: 28px;
-    background: url(afbeeldingen/wood.jpg);
+    background: url(Afbeeldingen/wood.jpg);
     border-radius: 20px;
     color: #FFFFFF;
     margin: 10px;
     font-family: Montserrat;
     font-weight: 600;
     width: 95%;
-   
+
 }
 
 .back {
     font-family: Montserrat;
     font-size: 18px;
-    background: url(afbeeldingen/wood.jpg);
+    background: url(Afbeeldingen/wood.jpg);
     border-radius: 20px;
     color: #FFFFFF;
     margin: 10px;
     font-family: Montserrat;
-    font-weight: 600; 
-    text-align: center; 
-    margin-left: 50px;
+    font-weight: 600;
+    text-align: center;
 }
 
 .Timebtn {
     font-family: Montserrat;
     font-size: 20px;
-    background: url(afbeeldingen/wood.jpg);
+    background: url(Afbeeldingen/wood.jpg);
     border-radius: 20px;
     color: #FFFFFF;
     margin: 10px;
     font-family: Montserrat;
-    font-weight: 600; 
-    text-align: center; 
+    font-weight: 600;
+    text-align: center;
     margin-left: 50px;
     width: 25%;
 }
@@ -135,21 +173,21 @@
 #submitblind {
     font-family: Montserrat;
     font-size: 12px;
-    background: url(afbeeldingen/wood.jpg);
+    background: url(Afbeeldingen/wood.jpg);
     border-radius: 20px;
     color: #FFFFFF;
     font-family: Montserrat;
-    font-weight: 600; 
-    text-align: center; 
+    font-weight: 600;
+    text-align: center;
     margin-left: 10px;
 }
 
-#blindfield{
+#blindfield {
     margin-left: 25px;
     margin: 10px;
 }
 
-#blindellips{
+#blindellips {
     margin-left: 50px;
 }
 
@@ -160,12 +198,12 @@
 .rulebutton {
     font-family: Montserrat;
     font-size: 24px;
-    background: url(afbeeldingen/wood.jpg);
+    background: url(Afbeeldingen/wood.jpg);
     border-radius: 20px;
     color: #FFFFFF;
     font-family: Montserrat;
-    font-weight: 600; 
-    text-align: center; 
+    font-weight: 600;
+    text-align: center;
     margin: 15px;
     padding-left: 20px;
     padding-right: 20px;
@@ -174,12 +212,12 @@
 .timebutton {
     font-family: Montserrat;
     font-size: 24px;
-    background: url(afbeeldingen/wood.jpg);
+    background: url(Afbeeldingen/wood.jpg);
     border-radius: 20px;
     color: #FFFFFF;
     font-family: Montserrat;
-    font-weight: 600; 
-    text-align: center; 
+    font-weight: 600;
+    text-align: center;
     margin: 15px;
     padding-left: 20px;
     padding-right: 100px;
@@ -190,7 +228,7 @@
     width: 600px;
     font-family: Montserrat;
     font-size: 48px;
-    background: url(afbeeldingen/wood.jpg);
+    background: url(Afbeeldingen/wood.jpg);
     border-radius: 20px;
     color: #FFFFFF;
     margin: 15px;
@@ -202,46 +240,4 @@
     align-items: center;
     height: 100vh;
     flex-direction: column;
-  }
-
-  .NewTournament {
-    text-align: center;
-    width: 600px;
-    font-family: Montserrat;
-    font-size: 48px;
-    background: url(afbeeldingen/wood.jpg);
-    border-radius: 20px;
-    color: #FFFFFF;
-    margin: 15px;
-}
-
-.NewTournament {
-    text-align: center;
-    width: 600px;
-    font-family: Montserrat;
-    font-size: 48px;
-    background: url(afbeeldingen/wood.jpg);
-    border-radius: 20px;
-    color: #FFFFFF;
-    margin: 15px;
-}
-
-.ExistingTournament {
-    text-align: center;
-    width: 600px;
-    font-family: Montserrat;
-    font-size: 48px;
-    background: url(afbeeldingen/wood.jpg);
-    border-radius: 20px;
-    color: #FFFFFF;
-    margin: 15px;
-}
-.namespace{
-    font-family: Montserrat;
-    font-size: 48px;
-}    
-
-#newhostfield {
-    margin-top: 15px;
-    margin-left: 15px;
 }
