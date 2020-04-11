@@ -80,7 +80,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
              <h5 class="card-title">Nieuwe hostnaam aanmaken</h5>
                 <form class="edit2" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                      <p>Voer hier een nieuwe hostnaam in</p>
-                     <input name=hostname type="text" required /><br>
+                     <input pattern="[a-zA-Z]+" name=hostname type="text" required /><br>
                      <input class="back" value="Aanmaken" type="submit" />
                 </form><br>
              <a href="hostmenu.php"><button class=back>Terug</button></a>
