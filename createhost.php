@@ -12,13 +12,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $input = trim(str_replace(array("'", "'"), '', $_POST['hostname']));
 
         //CHECK IF NAME ALREADY EXISTS IN DATABASE
-        $already_exists = false;
         $sql = "SELECT name FROM pokerDb.player_data WHERE name = :input";
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':input', $input);
         $stmt->execute();
         if($stmt->rowCount() > 0){
-            $already_exists = true;
             echo "<script type='text/javascript'>alert('Name already exists.');</script>";
         }
         else{
