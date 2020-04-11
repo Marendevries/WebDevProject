@@ -5,7 +5,7 @@ require "user.php";
 
 if($_SESSION['is_host'] != true )
 {
-    header("Location: test.php");
+    header("Location: createhost.php");
     exit;
 }
 $wit = $rood = $groen = $blauw = $zwart = "";
