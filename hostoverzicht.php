@@ -46,7 +46,7 @@ if($_SESSION['settings_id_set'] == false){
         <div class="card-body">
             <h5 class="card-title"><?php echo "your session ID= ", $_SESSION['session_game_id'] ?></h5>
             <?php
-            $sql ="SELECT player_id_fk FROM pokerDb.player_game WHERE game_id = '{$_SESSION['session_game_id']}' AND player_id_fk != '{$_SESSION['player_id']}' ";
+            $sql ="SELECT player_id_fk FROM pokerDb.player_game WHERE game_id = '{$_SESSION['session_game_id']}' ";
             $stmt= $pdo->query($sql);
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
             {
@@ -66,7 +66,7 @@ if($_SESSION['settings_id_set'] == false){
             <a href="tafelkeuze.html"><button class=Menuknop>Tafel Selecteren</button></a><br>
             <a href="tijdmenu.php"><button class=Menuknop>Tijd</button></a><br>
             <a href="fiches.php"><button class=Menuknop>Waarde fiches</button></a><br>
-            <a href="Blinds.php"><button class=Menuknop>Blinds</button></a><br>
+            <a href="blinds.php"><button class=Menuknop>Blinds</button></a><br>
             <a href="Spelregels.html"><button class=Menuknop>Spelregels</button></a><br>
             <button class=Menuknop>Opslaan</button><br>
             <a href="Hoofdmenu.html"><button onclick="return confirm('Weet je zeker dat je wilt stoppen?')" class=Menuknop>Stoppen</button></a><br>
