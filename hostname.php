@@ -42,9 +42,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt= $pdo->query($sql);
             $result1 = $stmt->fetch();
 
+            //SET PLAYER GAME FOR HOST
+            $sql = "INSERT INTO pokerDb.player_game (game_id, player_id_fk) VALUES ($result1[0],$result2[0])";
+            $stmt= $pdo->prepare($sql);
+            $stmt->execute();
+
             //STORE ID's IN SESSION
             $_SESSION['session_game_id'] = $result1[0];
             $_SESSION['player_id'] = $result2[0];
+            $_SESSION['is_host'] = true;
+            $_SESSION['settings_id_set'] = false;
+
+            // Redirect user to hostoverzicht page
+            header("location: hostoverzicht.php");
+            exit;
         }
     }
 }
