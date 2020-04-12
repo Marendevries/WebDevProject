@@ -25,8 +25,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt= $pdo->prepare($sql);
             $stmt->execute([$input]);
             //GET HOST PLAYER ID
-            $sql = "SELECT player_id FROM pokerDb.player_data WHERE name='$input'";
-            $stmt= $pdo->query($sql);
+            $sql = "SELECT player_id FROM pokerDb.player_data WHERE name = :input";
+            $stmt= $pdo->prepare($sql);
+            $stmt->bindValue(':input', $input);
+            $stmt->execute();
             $result2 = $stmt->fetch();
 
             //SET SESSION DATA IN DB
@@ -34,12 +36,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt= $pdo->prepare($sql);
             $stmt->execute([$input]);
             //GET SESSION ID
-            $sql = "SELECT MAX(session_id) FROM pokerDb.session_game";
-            $stmt= $pdo->query($sql);
-            $result1 = $stmt->fetch();
+            $result1 = $pdo->lastInsertId();
 
             //SET PLAYER GAME FOR HOST
-            $sql = "INSERT INTO pokerDb.player_game (game_id, player_id_fk) VALUES ($result1[0],$result2[0])";
+            $sql = "INSERT INTO pokerDb.player_game (game_id, player_id_fk) VALUES ($result1,$result2[0])";
             $stmt= $pdo->prepare($sql);
             $stmt->execute();
 
