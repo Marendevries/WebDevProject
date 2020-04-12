@@ -4,7 +4,7 @@ session_start();
 include "config.php";
 require "user.php";
 
-$input = "";
+$input_err = $input = "";
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty(trim($_POST["hostname"]))) {
@@ -12,22 +12,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $input = trim(str_replace(array("'", "'"), '', $_POST['hostname']));
 
         //CHECK IF NAME ALREADY EXISTS IN DATABASE
-        $sql = "SELECT name FROM pokerDb.player_data WHERE name = :input";
+        $sql = "SELECT name, player_id FROM pokerDb.player_data WHERE name = :input";
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':input', $input);
         $stmt->execute();
-        if($stmt->rowCount() > 0){
-            echo "<script type='text/javascript'>alert('Name already exists.');</script>";
+        if($stmt->rowCount() == 0){
+            echo "<script type='text/javascript'>alert('Name not found');</script>";
         }
         else{
-            //SET PLAYER DATA IN DB
-            $sql = "INSERT INTO pokerDb.player_data (name) VALUES (?)";
-            $stmt= $pdo->prepare($sql);
-            $stmt->execute([$input]);
-            //GET HOST PLAYER ID
-            $sql = "SELECT player_id FROM pokerDb.player_data WHERE name='$input'";
-            $stmt= $pdo->query($sql);
-            $result2 = $stmt->fetch();
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            $result2 = $row['player_id'];
 
             //SET SESSION DATA IN DB
             $sql = "INSERT INTO pokerDb.session_game (host_name) VALUES (?)";
@@ -39,13 +33,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $result1 = $stmt->fetch();
 
             //SET PLAYER GAME FOR HOST
-            $sql = "INSERT INTO pokerDb.player_game (game_id, player_id_fk) VALUES ($result1[0],$result2[0])";
+            $sql = "INSERT INTO pokerDb.player_game (game_id, player_id_fk) VALUES ($result1[0],$result2)";
             $stmt= $pdo->prepare($sql);
             $stmt->execute();
 
             //STORE ID's IN SESSION
             $_SESSION['session_game_id'] = $result1[0];
-            $_SESSION['player_id'] = $result2[0];
+            $_SESSION['player_id'] = $result2;
             $_SESSION['is_host'] = true;
             $_SESSION['settings_id_set'] = false;
 
@@ -72,14 +66,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="card-group">
         <div class="card">
             <div class="card-body">
-             <h5 class="card-title">Nieuwe hostnaam aanmaken</h5>
+                <h5 class="card-title">Bestaande host</h5>
                 <form class="edit2" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                     <p>Voer hier een nieuwe hostnaam in</p>
-                     <input pattern="[a-zA-Z]+" name=hostname type="text" required /><br>
-                     <input class="back" value="Aanmaken" type="submit" />
+                    <p>Voer hier uw eerder gebruikte naam in</p>
+                    <input pattern="[a-zA-Z]+" name=hostname type="text" required /><br>
+                    <input class="back" value="Opvragen" type="submit" />
                 </form><br>
-             <a href="hostmenu.php"><button class=back>Terug</button></a>
-         </div>
+                <a href="hostmenu.php"><button class=back>Terug</button></a>
+            </div>
         </div>
     </div>
 </div>
