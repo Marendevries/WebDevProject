@@ -85,6 +85,7 @@
     font-weight: 600; 
     text-align: center; 
     margin-left: 50px;
+    float: right;
 }
 
 .card-body.menu {
@@ -244,4 +245,24 @@
 #newhostfield {
     margin-top: 15px;
     margin-left: 15px;
+}
+
+
+.card-rules {
+    margin: 15px;
+    overflow: auto;
+}
+
+.edit{
+    font-family: Montserrat;
+    font-size: 12px;
+    background: url(afbeeldingen/wood.jpg);
+    border-radius: 20px;
+    color: #FFFFFF;
+    margin: 10px;
+    font-family: Montserrat;
+    font-weight: 600; 
+    text-align: center; 
+    margin-left: 50px;
+    float: right;
 }
