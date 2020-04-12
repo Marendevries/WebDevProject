@@ -13,11 +13,11 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Waarde fiches</h5>
-        <img src="Afbeeldingen/Ellipse 8.png"> Placeholder </i><br>
-        <img src="Afbeeldingen/Ellipse 9.png"> Placeholder </i><br>
-        <img src="Afbeeldingen/Ellipse 10.png"> Placeholder </i><br>
-        <img src="Afbeeldingen/Ellipse 11.png"> Placeholder </i><br>
-        <img src="Afbeeldingen/Ellipse 12.png"> Placeholder </i><br>
+        <img src="Afbeeldingen/Ellipse_8.png"> Placeholder </i><br>
+        <img src="Afbeeldingen/Ellipse_9.png"> Placeholder </i><br>
+        <img src="Afbeeldingen/Ellipse_10.png"> Placeholder </i><br>
+        <img src="Afbeeldingen/Ellipse_11.png"> Placeholder </i><br>
+        <img src="Afbeeldingen/Ellipse_12.png"> Placeholder </i><br>
         <a href="speleroverzicht.php"><button class=back>Terug</button></a>
       </div>
     </div>

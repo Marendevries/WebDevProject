@@ -156,6 +156,17 @@ Body {
     text-align: center;
 }
 
+#submittime {
+    font-family: Montserrat;
+    font-size: 18px;
+    background: url(Afbeeldingen/wood.jpg);
+    border-radius: 20px;
+    color: #FFFFFF;
+    margin: 10px;
+    font-weight: 600;
+    text-align: center;
+}
+
 .Timebtn {
     font-family: Montserrat;
     font-size: 20px;

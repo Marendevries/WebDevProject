@@ -72,26 +72,6 @@ if($_SESSION['settings_id_set'] == false){
             <a href="Hoofdmenu.html"><button onclick="return confirm('Weet je zeker dat je wilt stoppen?')" class=Menuknop>Stoppen</button></a><br>
         </div>
     </div>
-    <div class="card-group">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title"><?php echo "your session ID= ", $_SESSION['session_game_id'] ?></h5>
-            <?php
-            $sql ="SELECT player_id_fk FROM pokerDb.player_game WHERE game_id = '{$_SESSION['session_game_id']}' ";
-            $stmt= $pdo->query($sql);
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
-            {
-                $sql2 = "SELECT * FROM pokerDb.player_data WHERE player_id = '{$row['player_id_fk']}' ORDER BY RAND()
-                LIMIT 5";
-                $stmt2= $pdo->query($sql2);
-                while($row2 = $stmt2->fetch(PDO::FETCH_ASSOC))
-                {
-                    echo '<img src="Afbeeldingen/person.png"> '.$row2['name'].' </i><button class=edit>aanpassen </button><br>';
-                }
-            }
-            ?>
-        </div>
-    </div>
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">Huidige Tafel</h5>
