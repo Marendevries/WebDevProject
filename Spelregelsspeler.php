@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
-    <div class="card" style="width: 60rem;">
+    <div class="card-rules" style="width: 60rem;">
     <div class="card-body">
     <h5 class="card-title">Spelregels Poker Texas Hold em</h5>
     <p class="card-text">De blinds:<br>
