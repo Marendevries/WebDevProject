@@ -59,7 +59,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input pattern="\d*" type="text" value="<?php echo $_SESSION['time'] ?>" name="time"required style="margin-right: 40px"><br>
                 <input id="submittime" value="Aanpassen" type="submit" class="timechange" />
             </form><br>
-            <a href="hostoverzicht.php"><button class=back style="margin-right: 70px" >Terug</button></a>
+            <a href="tijdmenu.php"><button class=back style="margin-right: 70px" >Terug</button></a>
         </div>
         </div>
     </div>
