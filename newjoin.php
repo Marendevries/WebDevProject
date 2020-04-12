@@ -35,27 +35,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt= $pdo->prepare($sql);
             $stmt->execute([$player_name]);
             //GET HOST PLAYER ID
-            $sql = "SELECT player_id FROM pokerDb.player_data WHERE name='$player_name'";
-            $stmt= $pdo->query($sql);
-            $result2 = $stmt->fetch();
-
-            //SET SESSION DATA IN DB
-            $sql = "INSERT INTO pokerDb.session_game (host_name) VALUES (?)";
-            $stmt= $pdo->prepare($sql);
-            $stmt->execute([$player_name]);
-            //GET SESSION ID
-            $sql = "SELECT MAX(session_id) FROM pokerDb.session_game";
-            $stmt= $pdo->query($sql);
-            $result1 = $stmt->fetch();
+            $result2 = $pdo->lastInsertId();
 
             //SET PLAYER GAME FOR PLAYER
-            $sql = "INSERT INTO pokerDb.player_game (game_id, player_id_fk) VALUES ($result1[0],$result2[0])";
+            $sql = "INSERT INTO pokerDb.player_game (game_id, player_id_fk) VALUES (?,$result2)";
             $stmt= $pdo->prepare($sql);
-            $stmt->execute();
+            $stmt->execute($toernooi_id);
 
             //STORE ID's IN SESSION
-            $_SESSION['session_game_id'] = $result1[0];
-            $_SESSION['player_id'] = $result2[0];
+            $_SESSION['session_game_id'] = $toernooi_id;
+            $_SESSION['player_id'] = $result2;
             $_SESSION['is_host'] = false;
 
             // Redirect user to hostoverzicht page

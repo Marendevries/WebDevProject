@@ -1,5 +1,6 @@
 <?php
 
+include 'classes/config.php';
 
 class User {
 
@@ -99,12 +100,11 @@ class Bonfig
     {
         self::$confArray[$name] = $value;
     }
-
 }
 
 // db
 bonfig::write('db.host', 'localhost');
-bonfig::write('db.port', '5432');
+bonfig::write('db.port', '3306');
 bonfig::write('db.basename', 'pokerDb');
 bonfig::write('db.user', 'student');
 bonfig::write('db.password', 'student');

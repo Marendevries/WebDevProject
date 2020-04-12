@@ -33,24 +33,34 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             $result2 = $row['player_id'];
 
-            $sql = "SELECT MAX(session_id) FROM pokerDb.session_game";
-            $stmt= $pdo->query($sql);
-            $result1 = $stmt->fetch();
-
-            //SET PLAYER GAME FOR PLAYER
-            $sql = "INSERT INTO pokerDb.player_game (game_id, player_id_fk) VALUES ($result1[0],$result2)";
-            $stmt= $pdo->prepare($sql);
+            //CHECK IF THIS PLAYER IS ALREADY IN SESSION 
+            //DUPLICATION CHECK
+            $sql = "SELECT * FROM pokerDb.player_game WHERE game_id = :game_id AND player_id_fk = :player_id";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindValue(':player_id',$result2);
+            $stmt->bindValue(':game_id',$toernooi_id);
             $stmt->execute();
 
-            //STORE ID's IN SESSION
-            $_SESSION['session_game_id'] = $result1[0];
-            $_SESSION['player_id'] = $result2;
-            $_SESSION['is_host'] = false;
+            if($stmt->rowCount() == 0){
+                //SET PLAYER GAME FOR PLAYER
+                $sql = "INSERT INTO pokerDb.player_game (game_id, player_id_fk) VALUES (?,?)";
+                $stmt= $pdo->prepare($sql);
+                $stmt->execute([$toernooi_id, $result2]);
 
-            // Redirect user to speleroverzicht page
-            header("location: speleroverzicht.php");
-            exit;
+                //STORE ID's IN SESSION
+                $_SESSION['session_game_id'] = $toernooi_id;
+                $_SESSION['player_id'] = $result2;
+                $_SESSION['is_host'] = false;
+
+                // Redirect user to speleroverzicht page
+                header("location: speleroverzicht.php");
+                exit;
+
+            }
+            //MESSAGE FOR DUPLICATION
+            echo "<script type='text/javascript'>alert('Deze speler is al in de sessie');</script>";
         }elseif($id_err == true){
+            //MESSAGE FOR WRONG TOURNAMENT ID
             echo "<script type='text/javascript'>alert('Geen toernooi met dit ID gevonden');</script>";
         }
     }
