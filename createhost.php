@@ -4,6 +4,7 @@ session_start();
 include "classes\config.php";
 require "classes\user.php";
 
+
 $input = "";
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {

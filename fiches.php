@@ -3,6 +3,7 @@ session_start();
 include "classes\config.php";
 require "classes\user.php";
 
+
 if($_SESSION['is_host'] != true )
 {
     header("Location: createhost.php");
