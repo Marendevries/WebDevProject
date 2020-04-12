@@ -67,7 +67,7 @@ if($_SESSION['settings_id_set'] == false){
             <a href="tijdmenu.php"><button class=Menuknop>Tijd</button></a><br>
             <a href="fiches.php"><button class=Menuknop>Waarde fiches</button></a><br>
             <a href="blinds.php"><button class=Menuknop>Blinds</button></a><br>
-            <a href="Spelregels.html"><button class=Menuknop>Spelregels</button></a><br>
+            <a href="spelregels.php"><button class=Menuknop>Spelregels</button></a><br>
             <button class=Menuknop>Opslaan</button><br>
             <a href="destroy.php"><button onclick="return confirm('Weet je zeker dat je wilt stoppen?')" class=Menuknop>Stoppen</button></a><br>
         </div>
