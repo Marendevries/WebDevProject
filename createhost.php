@@ -6,8 +6,11 @@ require "classes/user.php";
 require_once('classes/settings.config.php');
 $new = new User($localhost);
 
-if($_SESSION['is_host'] = true){
+if($_SESSION['is_host'] == true){
     header("Location: hostoverzicht.php");
+}
+if($_SESSION['is_player'] == true){
+    header("Location: speleroverzicht.php");
 }
 
 $input = "";

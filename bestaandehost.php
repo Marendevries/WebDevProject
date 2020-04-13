@@ -4,8 +4,11 @@ session_start();
 include "classes\config.php";
 require "classes\user.php";
 
-if($_SESSION['is_host'] = true){
+if($_SESSION['is_host'] == true){
     header("Location: hostoverzicht.php");
+}
+if($_SESSION['is_player'] == true){
+    header("Location: speleroverzicht.php");
 }
 
 $input_err = $input = "";
@@ -40,7 +43,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->execute([$result1,$result2]);
 
             //STORE ID's IN SESSION
-            $_SESSION['session_game_id'] = $result1[0];
+            $_SESSION['session_game_id'] = $result1;
             $_SESSION['player_id'] = $result2;
             $_SESSION['is_host'] = true;
             $_SESSION['settings_id_set'] = false;

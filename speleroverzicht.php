@@ -1,3 +1,18 @@
+<?php
+session_start();
+include "classes/config.php";
+require "classes/user.php";
+
+if($_SESSION['is_player'] != true )
+{
+    header("Location: spelermenu.php");
+    exit;
+}
+if(!isset($_SESSION['table'])){
+    $_SESSION['table'] = "Nog niet ingedeeld. Contacteer uw host.";
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,14 +27,31 @@
 <div class="card-group">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Tafelnummer</h5>
-
-            <img src="Afbeeldingen/person.png"> Placeholder </i><br>
-            <img src="Afbeeldingen/person.png"> Placeholder </i><br>
-            <img src="Afbeeldingen/person.png"> Placeholder </i><br>
-            <img src="Afbeeldingen/person.png"> Placeholder </i><br>
-            <img src="Afbeeldingen/person.png"> Placeholder </i><br>
-            <img src="Afbeeldingen/person.png"> Placeholder </i><br>
+            <h5 class="card-title"><?php echo "Uw tafelnummer is : ", $_SESSION['table'] ?></h5>
+            <?php
+            $sql = "SELECT tafel FROM pokerDb.player_game WHERE player_id_fk = :player_id AND game_id = :game_id AND tafel != 0";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindValue(':player_id', $_SESSION['player_id']);
+            $stmt->bindValue(':game_id', $_SESSION['session_game_id']);
+            $stmt->execute();
+            if($stmt->rowCount() == 0){
+                $_SESSION['table'] = "Nog niet ingedeeld. Contacteer uw host.";
+            }else{
+                $table = $stmt->fetch(PDO::FETCH_ASSOC);
+                $_SESSION['table'] = $table['tafel'];
+                $sql ="SELECT player_id_fk FROM pokerDb.player_game WHERE game_id = '{$_SESSION['session_game_id']}' AND pokerDb.player_game.tafel = '{$_SESSION['table']}' ";
+                $stmt= $pdo->query($sql);
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+                {
+                    $sql2 = "SELECT * FROM pokerDb.player_data WHERE player_id = '{$row['player_id_fk']}'";
+                    $stmt2= $pdo->query($sql2);
+                    while($row2 = $stmt2->fetch(PDO::FETCH_ASSOC))
+                    {
+                        echo '<img src="Afbeeldingen/person.png"> '.$row2['name'].' </i><br>';
+                    }
+                }
+            }
+            ?>
             <a href="spelregelsspeler.php"><button class=rulebutton>Spelregels</button></a>
             <button class=timebutton>Tijd:</button>
             <a href="fichesspeler.php"><button class=rulebutton>fiches</button></a>

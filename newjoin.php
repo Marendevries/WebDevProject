@@ -4,6 +4,13 @@ session_start();
 include "classes\config.php";
 require "classes\user.php";
 
+if($_SESSION['is_player'] == true){
+    header("Location: speleroverzicht.php");
+}
+if($_SESSION['is_host'] == true){
+    header("Location: hostoverzicht.php");
+}
+
 $player_name = $toernooi_id  =  "";
 $id_err = false;
 
@@ -37,14 +44,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $result2 = $pdo->lastInsertId();
 
             //SET PLAYER GAME FOR PLAYER
-            $sql = "INSERT INTO pokerDb.player_game (game_id, player_id_fk) VALUES (?,$result2)";
+            $sql = "INSERT INTO pokerDb.player_game (game_id, player_id_fk) VALUES (:toernooi_id,$result2)";
             $stmt= $pdo->prepare($sql);
-            $stmt->execute($toernooi_id);
+            $stmt->bindValue(':toernooi_id', $toernooi_id);
+            $stmt->execute();
 
             //STORE ID's IN SESSION
             $_SESSION['session_game_id'] = $toernooi_id;
             $_SESSION['player_id'] = $result2;
-            $_SESSION['is_host'] = false;
+            $_SESSION['is_player'] = true;
 
             // Redirect user to hostoverzicht page
             header("location: speleroverzicht.php");
