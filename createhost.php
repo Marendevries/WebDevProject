@@ -3,6 +3,8 @@
 session_start();
 include "classes/config.php";
 require "classes/user.php";
+require_once('classes/settings.config.php');
+$new = new User($localhost);
 
 $input = "";
 

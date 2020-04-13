@@ -4,107 +4,70 @@ include 'classes/config.php';
 
 class User {
 
-    /* Properties */
-    private $conn;
+    protected $_config;
 
-    /* Get database access */
-    public function __construct(\PDO $pdo) {
-        $this->conn = $pdo;
+    // Database Connection
+    public $dbc;
+
+    /* function __construct
+     * Opens the database connection
+     * @param $config is an array of database connection parameters
+     */
+    public function __construct( array $config ) {
+        $this->_config = $config;
+        $this->getPDOConnection();
     }
 
-    function generateRandomString($length = 10) {
-        return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
-    }
+    /* Function __destruct
+     * Closes the database connection
+     */
+    public function __destruct() {
+		$this->dbc = NULL;
+	}
 
-    function trimString($input) {
-            // remove quotes from string
-            return $$input = trim(str_replace( array("'", "'"), '', $$input));
+    /* Function getPDOConnection
+     * Get a connection to the database using PDO.
+     */
+    private function getPDOConnection() {
+        // Check if the connection is already established
+        if ($this->dbc == NULL) {
+            // Create the connection
+            $dsn = "" .
+                $this->_config['driver'] .
+                ":host=" . $this->_config['host'] .
+                ";dbname=" . $this->_config['dbname'];
+
+            try {
+                $this->dbc = new PDO( $dsn, $this->_config[ 'username' ], $this->_config[ 'password' ] );
+            } catch( PDOException $e ) {
+                echo __LINE__.$e->getMessage();
+            }
         }
-
-    function getSingleValue($tableName, $prop, $value, $columnName)
-    {
-        $q = $this->conn->query("SELECT `$columnName` FROM `$tableName` WHERE $prop='".$value."'");
-        $f = $q->fetch();
-        $result = $f[$columnName];
-        return $result;
     }
 
-}
-
-class player_data {
-    private $player_id;
-    private $name;
-    private $winnings_total;
-
-    public function setPlayerId($player_id)
-    {
-        $this->$player_id = $player_id;
-    }
-    public function setName($name)
-    {
-        $this->$name = $name;
-    }
-    public function setWinningsTotal($winnings_total)
-    {
-        $this->$winnings_total = $winnings_total;
-    }
-}
-
-class player_game {
-    private $player_game_id;
-    private $game_id;
-    private $player_id_fk;
-}
-
-class Core
-{
-
-    public $pdo;
-    private static $instance;
-
-    private function __construct()
-    {
-        // building data source name from config
-        $dsn = 'pgsql:host=' . bonfig::read('db.host') .
-            ';dbname='    . bonfig::read('db.basename') .
-            ';port='      . bonfig::read('db.port') .
-            ';connect_timeout=15';
-        // getting DB user from config
-        $user = bonfig::read('db.user');
-        // getting DB password from config
-        $password = bonfig::read('db.password');
-
-        $this->pdo = new PDO($dsn, $user, $password);
-    }
-    public static function getInstance()
-    {
-        if (!isset(self::$instance))
-        {
-            $object = __CLASS__;
-            self::$instance = new $object;
+    /* Function runQuery
+     * Runs a insert, update or delete query
+     * @param string sql insert update or delete statement
+     * @return int count of records affected by running the sql statement.
+     */
+    public function runQuery( $sql ) {
+        try {
+        	$count = $this->dbc->exec($sql) or print_r($this->dbc->errorInfo());
+        } catch(PDOException $e) {
+        	echo __LINE__.$e->getMessage();
         }
-        return self::$instance;
+        return $count;
     }
+
+    /* Function getQuery
+     * Runs a select query
+     * @param string sql insert update or delete statement
+     * @returns associative array
+     */
+	public function getQuery( $sql ) {
+		$stmt = $this->dbc->query( $sql );
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+		return $stmt;
+	}
 }
-
-class Bonfig
-{
-    static $confArray;
-
-    public static function read($name)
-    {
-        return self::$confArray[$name];
-    }
-
-    public static function write($name, $value)
-    {
-        self::$confArray[$name] = $value;
-    }
-}
-
-// db
-bonfig::write('db.host', 'localhost');
-bonfig::write('db.port', '3306');
-bonfig::write('db.basename', 'pokerDb');
-bonfig::write('db.user', 'student');
-bonfig::write('db.password', 'student');
