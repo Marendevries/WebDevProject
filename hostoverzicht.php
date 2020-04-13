@@ -90,9 +90,6 @@ if($_SESSION['settings_id_set'] == false){
                 }
             }
             ?>
-            <a href="spelregels.php"><button class=Menuknop>Spelregels</button></a><br>
-            <button class=Menuknop>Opslaan</button><br>
-            <a href="destroy.php"><button onclick="return confirm('Weet je zeker dat je wilt stoppen?')" class=Menuknop>Stoppen</button></a><br>
         </div>
     </div>
 </body>

@@ -5,8 +5,6 @@ include "classes/config.php";
 require "classes/user.php";
 require_once('classes/settings.config.php');
 $new = new User($localhost);
-include "classes\config.php";
-require "classes\user.php";
 
 $input = "";
 
@@ -40,11 +38,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt= $pdo->prepare($sql);
             $stmt->execute([$input]);
             //GET SESSION ID
-            $sql = "SELECT MAX(session_id) FROM pokerDb.session_game";
-            $stmt= $pdo->query($sql);
-            $result1 = $stmt->fetch();      
-            //$result1 = $pdo->lastInsertID()
-
             $result1 = $pdo->lastInsertId();
 
             //SET PLAYER GAME FOR HOST
