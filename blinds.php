@@ -1,7 +1,7 @@
 <?php
 session_start();
-include "config.php";
-require "user.php";
+include "classes\config.php";
+require "classes\user.php";
 
 if($_SESSION['is_host'] != true )
 {
@@ -59,9 +59,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <div class="card-body-blinds">
             <h5 class="card-title">Waarde fiches</h5>
             <form action="Blinds.php" method="post" class="edit2">
-                <img style="margin-right: 16px" id="blindellips" src="Afbeeldingen/ellipse_13.png"> Inzet Big blind </i>
+                <img style="margin-right: 16px" id="blindellips" src="Afbeeldingen/ellipse 13.png"> Inzet Big blind </i>
                 <input pattern="\d*" type="text" value="<?php echo $_SESSION['Bblind'] ?>" name="Bblind"required style="margin-right: 40px"><br>
-                <img id="blindellips" src="Afbeeldingen/Ellipse_10.png"> Inzet Small blind </i>
+                <img id="blindellips" src="Afbeeldingen/Ellipse 10.png"> Inzet Small blind </i>
                 <input pattern="\d*" type="text" value="<?php echo $_SESSION['Sblind'] ?>" name="Sblind"required style="margin-right: 40px"><br>
                 <input id="submitblind" value="Aanpassen" type="submit" />
             </form><br>

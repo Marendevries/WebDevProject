@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-include "config.php";
-require "user.php";
+include "classes\config.php";
+require "classes\user.php";
 
 $input_err = $input = "";
 

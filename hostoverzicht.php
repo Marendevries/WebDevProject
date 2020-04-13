@@ -1,7 +1,7 @@
 <?php
 session_start();
-include "config.php";
-require "user.php";
+include "classes\config.php";
+require "classes\user.php";
 
 if($_SESSION['is_host'] != true )
 {
@@ -25,6 +25,7 @@ if($_SESSION['settings_id_set'] == false){
     $_SESSION['pot'] = 0;
     $_SESSION['Bblind'] = 50;
     $_SESSION['Sblind'] = 25;
+    $_SESSION['Table'] = 1;
 }
 
 ?>
@@ -63,26 +64,25 @@ if($_SESSION['settings_id_set'] == false){
     <div class="card">
         <div class="card-body menu">
             <h5 class="card-title">Opties</h5>
-            <a href="tafelkeuze.html"><button class=Menuknop>Tafel Selecteren</button></a><br>
+            <a href="tafelkeuze.php"><button class=Menuknop>Tafel Selecteren</button></a><br>
             <a href="tijdmenu.php"><button class=Menuknop>Tijd</button></a><br>
             <a href="fiches.php"><button class=Menuknop>Waarde fiches</button></a><br>
             <a href="blinds.php"><button class=Menuknop>Blinds</button></a><br>
-            <a href="Spelregels.html"><button class=Menuknop>Spelregels</button></a><br>
-            <button class=Menuknop>Opslaan</button><br>
-            <a href="Hoofdmenu.html"><button onclick="return confirm('Weet je zeker dat je wilt stoppen?')" class=Menuknop>Stoppen</button></a><br>
+            <a href="Spelregels.html"><button class=Menuknop>Spelregels</button></a><br>    
+            <button class=Menuknop>Spel starten</button><br>        
+            <a href="hoofdmenu.html"><button onclick="return confirm('Weet je zeker dat je wilt stoppen?')" class=Menuknop>Stoppen</button></a><br>
         </div>
     </div>
-    <div class="card-group">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title"><?php echo "your session ID= ", $_SESSION['session_game_id'] ?></h5>
+            <h5 class="card-title"><?php echo "Table=", $_SESSION['Table'] ?></h5>
             <?php
-            $sql ="SELECT player_id_fk FROM pokerDb.player_game WHERE game_id = '{$_SESSION['session_game_id']}' ";
+            include 'playerrand.php'; // shuffle 
+            $sql ="SELECT player_id_fk FROM pokerDb.player_game WHERE game_id = '{$_SESSION['session_game_id']}'";
             $stmt= $pdo->query($sql);
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
             {
-                $sql2 = "SELECT * FROM pokerDb.player_data WHERE player_id = '{$row['player_id_fk']}' ORDER BY RAND()
-                LIMIT 5";
+                $sql2 = "SELECT * FROM pokerDb.player_data WHERE player_id = '{$row['player_id_fk']}'";
                 $stmt2= $pdo->query($sql2);
                 while($row2 = $stmt2->fetch(PDO::FETCH_ASSOC))
                 {
@@ -92,17 +92,5 @@ if($_SESSION['settings_id_set'] == false){
             ?>
         </div>
     </div>
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">Huidige Tafel</h5>
-            <img src="Afbeeldingen/person.png"> Placeholder </i><a href="playeredit.html"><button class=edit> Selecteren </button></a><br>
-            <img src="Afbeeldingen/person.png"> Placeholder </i><a href="playeredit.html"><button class=edit> Selecteren </button></a><br>
-            <img src="Afbeeldingen/person.png"> Placeholder </i><a href="playeredit.html"><button class=edit> Selecteren </button></a><br>
-            <img src="Afbeeldingen/person.png"> Placeholder </i><a href="playeredit.html"><button class=edit> Selecteren </button></a><br>
-            <img src="Afbeeldingen/person.png"> Placeholder </i><a href="playeredit.html"><button class=edit> Selecteren </button></a><br>
-            <img src="Afbeeldingen/person.png"> Placeholder </i><a href="playeredit.html"><button class=edit> Selecteren </button></a><br>
-        </div>
-    </div>
-</div>
 </body>
 </html>

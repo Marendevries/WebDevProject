@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-include "config.php";
-require "user.php";
+include "classes\config.php";
+require "classes\user.php";
 
 $input = "";
 
@@ -36,7 +36,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             //GET SESSION ID
             $sql = "SELECT MAX(session_id) FROM pokerDb.session_game";
             $stmt= $pdo->query($sql);
-            $result1 = $stmt->fetch();
+            $result1 = $stmt->fetch();      
+            //$result1 = $pdo->lastInsertID()
 
             //SET PLAYER GAME FOR HOST
             $sql = "INSERT INTO pokerDb.player_game (game_id, player_id_fk) VALUES ($result1[0],$result2[0])";

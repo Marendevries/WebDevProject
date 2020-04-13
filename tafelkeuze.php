@@ -13,11 +13,11 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Tafel Selecteren</h5>
-        <img src="Afbeeldingen/table.png"> Placeholder </i><button class=edit> Selecteren </button><br>
-        <img src="Afbeeldingen/table.png"> Placeholder </i><button class=edit> Selecteren </button><br>
-        <img src="Afbeeldingen/table.png"> Placeholder </i><button class=edit> Selecteren </button><br>
-        <img src="Afbeeldingen/table.png"> Placeholder </i><button class=edit> Selecteren </button><br>
-        <img src="Afbeeldingen/table.png"> Placeholder </i><button class=edit> Selecteren </button><br>
+        <img src="Afbeeldingen/table.png"> Tafel 1 </i><button class="edit2"> Selecteren </button><br>
+        <img src="Afbeeldingen/table.png"> Tafel 2 </i><button class="edit2"> Selecteren </button><br>
+        <img src="Afbeeldingen/table.png"> Tafel 3 </i><button class="edit2"> Selecteren </button><br>
+        <img src="Afbeeldingen/table.png"> Tafel 4 </i><button class="edit2"> Selecteren </button><br>
+        <img src="Afbeeldingen/table.png"> Tafel 5 </i><button class="edit2"> Selecteren </button><br>
         <a href="hostoverzicht.php"><button class=back>Terug</button></a>
       </div>
     </div>

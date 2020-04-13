@@ -1,7 +1,7 @@
 <?php
 session_start();
-include "config.php";
-require "user.php";
+include "classes\config.php";
+require "classes\user.php";
 
 if($_SESSION['is_host'] != true )
 {
@@ -78,11 +78,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
          <div class="card-body-blinds2" style="background: url(Afbeeldingen/wood.jpg)">
              <h5 class="card-title">Waarde fiches</h5>
              <form class="edit2" method="post" action="fiches.php">
-                 <img style="margin-right: 50px" class="elips" src="Afbeeldingen/Ellipse_11.png"></i><input pattern="\d*" type="text" value="<?php echo $_SESSION['wit'] ?>" name="wit"required><br>
-                 <img style="margin-right: 50px" class="elips" src="Afbeeldingen/Ellipse_9.png"></i><input pattern="\d*" type="text" value="<?php echo $_SESSION['rood'] ?>" name="rood"required><br>
-                 <img style="margin-right: 50px" class="elips" src="Afbeeldingen/Ellipse_8.png"></i><input pattern="\d*" type="text" value="<?php echo $_SESSION['groen'] ?>" name="groen"required><br>
-                 <img style="margin-right: 50px" class="elips" src="Afbeeldingen/Ellipse_10.png"></i><input pattern="\d*" type="text" value="<?php echo $_SESSION['blauw'] ?>" name="blauw"required><br>
-                 <img style="margin-right: 50px" class="elips" src="Afbeeldingen/Ellipse_12.png"></i><input pattern="\d*" type="text" value="<?php echo $_SESSION['zwart'] ?>" name="zwart"required><br>
+                 <img style="margin-right: 50px" class="elips" src="Afbeeldingen/Ellipse 11.png"></i><input pattern="\d*" type="text" value="<?php echo $_SESSION['wit'] ?>" name="wit"required><br>
+                 <img style="margin-right: 50px" class="elips" src="Afbeeldingen/Ellipse 9.png"></i><input pattern="\d*" type="text" value="<?php echo $_SESSION['rood'] ?>" name="rood"required><br>
+                 <img style="margin-right: 50px" class="elips" src="Afbeeldingen/Ellipse 8.png"></i><input pattern="\d*" type="text" value="<?php echo $_SESSION['groen'] ?>" name="groen"required><br>
+                 <img style="margin-right: 50px" class="elips" src="Afbeeldingen/Ellipse 10.png"></i><input pattern="\d*" type="text" value="<?php echo $_SESSION['blauw'] ?>" name="blauw"required><br>
+                 <img style="margin-right: 50px" class="elips" src="Afbeeldingen/Ellipse 12.png"></i><input pattern="\d*" type="text" value="<?php echo $_SESSION['zwart'] ?>" name="zwart"required><br>
                  <a><button class="back" type="submit">submit</button></a>
              </form>
             <a href="hostoverzicht.php"><button class=back>Terug</button></a>

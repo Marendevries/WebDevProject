@@ -114,8 +114,6 @@ Body {
     text-align: center;
     margin-left: 50px;
     float: right;
-<<<<<<< HEAD
-=======
 }
 
 .edit2 {
@@ -126,7 +124,32 @@ Body {
     font-family: Montserrat;
     font-weight: 600;
     text-align: center;
->>>>>>> refs/remotes/origin/master
+}
+
+.edit3 {
+    font-family: Montserrat;
+    font-size: 12px;
+    background: url(Afbeeldingen/wood.jpg);
+    border-radius: 20px;
+    color: #FFFFFF;
+    margin: 10px;
+    font-family: Montserrat;
+    font-weight: 600;
+    text-align: center;
+    margin-left: 50px;
+}
+
+.selecttable {
+    font-family: Montserrat;
+    font-size: 12px;
+    background: url(Afbeeldingen/wood.jpg);
+    border-radius: 20px;
+    color: #FFFFFF;
+    margin: 10px;
+    font-family: Montserrat;
+    font-weight: 600;
+    text-align: center;
+    margin-left: 50px;
 }
 
 .card-body.menu {
@@ -144,7 +167,6 @@ Body {
     font-family: Montserrat;
     font-weight: 600;
     width: 95%;
-
 }
 
 .back {
@@ -244,7 +266,6 @@ Body {
     height: 100vh;
     flex-direction: column;
 }
-<<<<<<< HEAD
 
 .NewTournament {
     text-align: center;
@@ -296,5 +317,5 @@ Body {
     margin-left: 50px;
     float: right;
 }
-=======
->>>>>>> refs/remotes/origin/master
+
+
