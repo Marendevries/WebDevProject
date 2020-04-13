@@ -3,6 +3,10 @@
 session_start();
 include "classes\config.php";
 require "classes\user.php";
+<<<<<<< HEAD
+=======
+
+>>>>>>> e889787f27d2bb3f723b2355d37515709635a536
 
 $input_err = $input = "";
 
@@ -28,14 +32,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt= $pdo->prepare($sql);
             $stmt->execute([$input]);
             //GET SESSION ID
-            $sql = "SELECT MAX(session_id) FROM pokerDb.session_game";
-            $stmt= $pdo->query($sql);
-            $result1 = $stmt->fetch();
+            $result1 = $pdo->lastInsertId();
 
             //SET PLAYER GAME FOR HOST
-            $sql = "INSERT INTO pokerDb.player_game (game_id, player_id_fk) VALUES ($result1[0],$result2)";
+            $sql = "INSERT INTO pokerDb.player_game (game_id, player_id_fk) VALUES (?,?)";
             $stmt= $pdo->prepare($sql);
-            $stmt->execute();
+            $stmt->execute([$result1,$result2]);
 
             //STORE ID's IN SESSION
             $_SESSION['session_game_id'] = $result1[0];

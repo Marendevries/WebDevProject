@@ -124,6 +124,7 @@ Body {
     font-family: Montserrat;
     font-weight: 600;
     text-align: center;
+<<<<<<< HEAD
 }
 
 .edit3 {
@@ -150,6 +151,8 @@ Body {
     font-weight: 600;
     text-align: center;
     margin-left: 50px;
+=======
+>>>>>>> e889787f27d2bb3f723b2355d37515709635a536
 }
 
 .card-body.menu {
@@ -177,6 +180,17 @@ Body {
     color: #FFFFFF;
     margin: 10px;
     font-family: Montserrat;
+    font-weight: 600;
+    text-align: center;
+}
+
+#submittime {
+    font-family: Montserrat;
+    font-size: 18px;
+    background: url(Afbeeldingen/wood.jpg);
+    border-radius: 20px;
+    color: #FFFFFF;
+    margin: 10px;
     font-weight: 600;
     text-align: center;
 }
@@ -317,5 +331,8 @@ Body {
     margin-left: 50px;
     float: right;
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> e889787f27d2bb3f723b2355d37515709635a536

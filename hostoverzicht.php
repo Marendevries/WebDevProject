@@ -68,6 +68,7 @@ if($_SESSION['settings_id_set'] == false){
             <a href="tijdmenu.php"><button class=Menuknop>Tijd</button></a><br>
             <a href="fiches.php"><button class=Menuknop>Waarde fiches</button></a><br>
             <a href="blinds.php"><button class=Menuknop>Blinds</button></a><br>
+<<<<<<< HEAD
             <a href="Spelregels.html"><button class=Menuknop>Spelregels</button></a><br>    
             <button class=Menuknop>Spel starten</button><br>        
             <a href="hoofdmenu.html"><button onclick="return confirm('Weet je zeker dat je wilt stoppen?')" class=Menuknop>Stoppen</button></a><br>
@@ -90,6 +91,11 @@ if($_SESSION['settings_id_set'] == false){
                 }
             }
             ?>
+=======
+            <a href="spelregels.php"><button class=Menuknop>Spelregels</button></a><br>
+            <button class=Menuknop>Opslaan</button><br>
+            <a href="destroy.php"><button onclick="return confirm('Weet je zeker dat je wilt stoppen?')" class=Menuknop>Stoppen</button></a><br>
+>>>>>>> e889787f27d2bb3f723b2355d37515709635a536
         </div>
     </div>
 </body>
