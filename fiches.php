@@ -2,10 +2,6 @@
 session_start();
 include "classes\config.php";
 require "classes\user.php";
-<<<<<<< HEAD
-=======
-
->>>>>>> e889787f27d2bb3f723b2355d37515709635a536
 
 if($_SESSION['is_host'] != true )
 {
@@ -62,7 +58,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
     }
 }
-
 ?>
 
 <!DOCTYPE html>

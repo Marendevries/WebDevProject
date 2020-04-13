@@ -68,7 +68,6 @@ if($_SESSION['settings_id_set'] == false){
             <a href="tijdmenu.php"><button class=Menuknop>Tijd</button></a><br>
             <a href="fiches.php"><button class=Menuknop>Waarde fiches</button></a><br>
             <a href="blinds.php"><button class=Menuknop>Blinds</button></a><br>
-<<<<<<< HEAD
             <a href="Spelregels.html"><button class=Menuknop>Spelregels</button></a><br>    
             <button class=Menuknop>Spel starten</button><br>        
             <a href="hoofdmenu.html"><button onclick="return confirm('Weet je zeker dat je wilt stoppen?')" class=Menuknop>Stoppen</button></a><br>
@@ -78,7 +77,7 @@ if($_SESSION['settings_id_set'] == false){
         <div class="card-body">
             <h5 class="card-title"><?php echo "Table=", $_SESSION['Table'] ?></h5>
             <?php
-            include 'playerrand.php'; // shuffle 
+            include 'classes/playerrand.php'; // shuffle 
             $sql ="SELECT player_id_fk FROM pokerDb.player_game WHERE game_id = '{$_SESSION['session_game_id']}'";
             $stmt= $pdo->query($sql);
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
@@ -91,11 +90,9 @@ if($_SESSION['settings_id_set'] == false){
                 }
             }
             ?>
-=======
             <a href="spelregels.php"><button class=Menuknop>Spelregels</button></a><br>
             <button class=Menuknop>Opslaan</button><br>
             <a href="destroy.php"><button onclick="return confirm('Weet je zeker dat je wilt stoppen?')" class=Menuknop>Stoppen</button></a><br>
->>>>>>> e889787f27d2bb3f723b2355d37515709635a536
         </div>
     </div>
 </body>
