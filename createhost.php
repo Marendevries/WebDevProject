@@ -6,6 +6,10 @@ require "classes/user.php";
 require_once('classes/settings.config.php');
 $new = new User($localhost);
 
+if($_SESSION['is_host'] = true){
+    header("Location: hostoverzicht.php");
+}
+
 $input = "";
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -46,7 +50,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->execute();
 
             //STORE ID's IN SESSION
-            $_SESSION['session_game_id'] = $result1[0];
+            $_SESSION['session_game_id'] = $result1;
             $_SESSION['player_id'] = $result2[0];
             $_SESSION['is_host'] = true;
             $_SESSION['settings_id_set'] = false;

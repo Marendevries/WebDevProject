@@ -11,8 +11,8 @@ for ($table_id = 1; $table_id <= $numberOfTablesNeeded ; $table_id++){
 
     for($seat_id = 1; $seat_id <= 6; $seat_id++){
 
-        if(($table_id*$seat_id)-1 < count($allPlayers)) {
-            $table_increment = $table_id * 6 - 7;
+        $table_increment = $table_id * 6 - 7;
+        if(($table_increment+$seat_id) < count($allPlayers)) {
             $fk = $allPlayers[($table_increment + $seat_id)]['player_id_fk'];
             $query = "UPDATE pokerDb.player_game SET pokerDb.player_game.tafel = :table_id WHERE pokerDb.player_game.player_id_fk = '{$fk}' AND pokerDb.player_game.game_id = :session_id";
             $stmt2 = $pdo->prepare($query);
