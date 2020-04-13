@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,8 +15,8 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Tijd</h5>
-        <button class="Timebtn">Tijd</button><br>
-        <button class="Timebtn">Tijd starten</button><br>
+        <button class="Timebtn" onClick="document.location.href='tijd.php'">Tijd aanpassen </button><br>
+        <button class="Timebtn" onClick="document.location.href='starttijd.php' ">Tijd starten</button><br>
         <button class="Timebtn">Tijd herstarten</button><br>
         <button class="Timebtn">Tijd pauzeren</button><br>
         <button class="Timebtn">Tijd stoppen</button><br>

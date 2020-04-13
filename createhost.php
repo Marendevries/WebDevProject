@@ -1,10 +1,19 @@
 <?php
 
 session_start();
+<<<<<<< HEAD
 include "classes/config.php";
 require "classes/user.php";
 require_once('classes/settings.config.php');
 $new = new User($localhost);
+=======
+include "classes\config.php";
+require "classes\user.php";
+<<<<<<< HEAD
+=======
+
+>>>>>>> e889787f27d2bb3f723b2355d37515709635a536
+>>>>>>> ec4820c89f73e3641fb4f47e7739be6a7284c2fa
 
 $input = "";
 
@@ -38,7 +47,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt= $pdo->prepare($sql);
             $stmt->execute([$input]);
             //GET SESSION ID
+<<<<<<< HEAD
+            $sql = "SELECT MAX(session_id) FROM pokerDb.session_game";
+            $stmt= $pdo->query($sql);
+            $result1 = $stmt->fetch();      
+            //$result1 = $pdo->lastInsertID()
+=======
             $result1 = $pdo->lastInsertId();
+>>>>>>> e889787f27d2bb3f723b2355d37515709635a536
 
             //SET PLAYER GAME FOR HOST
             $sql = "INSERT INTO pokerDb.player_game (game_id, player_id_fk) VALUES ($result1,$result2[0])";

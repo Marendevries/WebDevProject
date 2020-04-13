@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-include "classes/config.php";
-require "classes/user.php";
+include "classes\config.php";
+require "classes\user.php";
 
 $player_name = $toernooi_id  =  "";
 $id_err = false;
