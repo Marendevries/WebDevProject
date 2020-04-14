@@ -53,8 +53,8 @@ if(!isset($_SESSION['table'])){
             }
             ?>
             <a href="spelregelsspeler.php"><button class=rulebutton>Spelregels</button></a>
-            <button class=timebutton>Tijd:</button>
-            <a href="fichesspeler.php"><button class=rulebutton>fiches</button></a>
+            <a href="fichesspeler.php"><button class=rulebutton>Fiches</button></a>
+            <a href="blindplayer.php"><button class=rulebutton>Blinds</button></a>
             <a href="hoofdmenu.php"><button class=rulebutton>Stoppen</button></a><br>
         </div>
     </div>

@@ -47,7 +47,9 @@
         Wanneer er twee dezelfde winnende handen zijn, is het split pot.<br>
         Kan de pot niet precies worden verdeeld en is er sprake van een overblijvende chip, dan gaat deze naar de speler die de laatste inzet of verhoging heeft gedaan.<br>
         Is dat ook onbeslist dan gaat de chip naar de speler links van de dealer.</p>
-    <a href="Afbeeldingen/spelregels.jpg" class="btn btn-primary">Bekijk hier de mogelijke kaartencombinaties</a><br><br>
+
+        Mogelijke kaartencombinaties
+        <img src="Afbeeldingen/spelregels.jpg"></i><br>
 
     <a href="hostoverzicht.php"><button class=back>Terug</button></a>
     </div>

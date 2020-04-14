@@ -22,7 +22,6 @@ if (!isset($_SESSION['is_player'])){
         <button class="Knop" name="HostToernooi" onClick="document.location.href='hostmenu.php'"> Host Toernooi </button>
     </div>
     <div><button class="Knop" name="JoinToernooi" onClick="document.location.href='spelermenu.php'">Join Toernooi</button> </div>
-    <div><button class="Knop"name="Leaderbord">Leaderboard</button> </div>
     <?php if (isset($_SESSION['session_game_id'])){
         echo     '<div><button class="Knop"name="destroy" onClick="document.location.href=\'destroy.php\'">Leave game</button> </div>';
     }  ?>

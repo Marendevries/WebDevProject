@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
-    <div class="card-rules" style="width: 60rem;">
+  <div class="container">
+    <div class="card-rules" style="width: 60rem">
     <div class="card-body">
     <h5 class="card-title">Spelregels Poker Texas Hold em</h5>
     <p class="card-text">De blinds:<br>
@@ -46,10 +47,13 @@
         Wanneer er twee dezelfde winnende handen zijn, is het split pot.<br>
         Kan de pot niet precies worden verdeeld en is er sprake van een overblijvende chip, dan gaat deze naar de speler die de laatste inzet of verhoging heeft gedaan.<br>
         Is dat ook onbeslist dan gaat de chip naar de speler links van de dealer.</p>
-    <a href="afbeeldingen/spelregels.jpg" class="btn btn-primary">Bekijk hier de mogelijke kaartencombinaties</a><br><br>
+
+        Mogelijke kaartencombinaties
+        <img src="Afbeeldingen/spelregels.jpg"></i><br>
 
     <a href="speleroverzicht.php"><button class=back>Terug</button></a>
     </div>
     </div>
+  </div>
 </body>
 </html>

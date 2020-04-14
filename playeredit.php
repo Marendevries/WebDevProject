@@ -28,9 +28,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $sql = "UPDATE pokerDb.player_game SET rebuy =:rebuy, has_paid =:bought WHERE player_id_fk =:player_id AND game_id =:game_id";
         $stmt = $pdo->prepare($sql);
         $stmt->execute($data);
-
     }
 }
+
+$sql ="SELECT * FROM pokerDb.player_game WHERE player_id_fk =:player_id AND game_id =:game_id";
+$data =[
+    'player_id' => $_SESSION['player_id'],
+    'game_id' => $_SESSION['session_game_id'],
+];
+$stmt = $pdo->prepare($sql);
+$stmt->execute($data);
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
+
  ?>
 <!DOCTYPE html>
 <html>
@@ -51,11 +60,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <form action="playeredit.php" method="POST">
               <label id="rebuybox"> Ingekocht </label>
               <input type="hidden" name="ingekocht" value="0"/>
-              <input type="checkbox" name="ingekocht"value="1" />
+              <input type="checkbox" name="ingekocht"value="1" <?php echo ($row['has_paid']==1 ? 'checked' : '');?> />
               <br>
               <label id="rebuybox"> Rebuy </label>
               <input type="hidden" name="rebuy" value="0"/>
-              <input type="checkbox" value="1" name="rebuy">
+              <input type="checkbox" name="rebuy"value="1" <?php echo ($row['rebuy']==1 ? 'checked' : '');?> />
               <br>
               <button type="submit" style="float: left" class="edit">Submit</button>
               <br><br>

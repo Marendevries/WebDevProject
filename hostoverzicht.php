@@ -69,12 +69,11 @@ if($_SESSION['settings_id_set'] == false){
         <div class="card-body menu">
             <h5 class="card-title">Opties</h5>
             <a href="tafelkeuze.php"><button class=Menuknop>Tafel Selecteren</button></a><br>
-            <a href="tijdmenu.php"><button class=Menuknop>Tijd</button></a><br>
             <a href="fiches.php"><button class=Menuknop>Waarde fiches</button></a><br>
             <a href="blinds.php"><button class=Menuknop>Blinds</button></a><br>
             <a href="Spelregels.php"><button class=Menuknop>Spelregels</button></a><br>
-            <form action="hostoverzicht.php" method="POST"><button onclick="return confirm('Weet je zeker dat je de actieve spelers opnieuw wilt indelen?')" class=Menuknop>Verdeel spelers</button></form><br>        
-            <a href="hoofdmenu.php"><button onclick="return confirm('Weet je zeker dat je wilt stoppen?')" class=Menuknop>Stoppen</button></a><br>
+            <form action="hostoverzicht.php" method="POST"><button style="margin-bottom: 0px" onclick="return confirm('Weet je zeker dat je de actieve spelers opnieuw wilt indelen?')" class=Menuknop>Verdeel spelers</button></form><br>        
+            <a href="hoofdmenu.php"><button style="margin-top: 0px" onclick="return confirm('Weet je zeker dat je wilt stoppen?')" class=Menuknop>Stoppen</button></a><br>
         </div>
     </div>
     <div class="card">
