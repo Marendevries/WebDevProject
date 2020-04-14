@@ -23,7 +23,10 @@ if (!isset($_SESSION['is_player'])){
     </div>
     <div><button class="Knop" name="JoinToernooi" onClick="document.location.href='spelermenu.php'">Join Toernooi</button> </div>
     <?php if (isset($_SESSION['session_game_id'])){
-        echo     '<div><button class="Knop"name="destroy" onClick="document.location.href=\'destroy.php\'">Leave game</button> </div>';
+        echo     '<div><button class="Knop"name="destroy" onClick="document.location.href=\'destroy.php\'">Verlaat spel(Host blijft)</button> </div>';
+    }  ?>
+        <?php if ($_SESSION['is_host'] != false){
+        echo     '<div><button class="Knop"name="destroyhost" onClick="document.location.href=\'destroyhost.php\'">Eindig Toernooi</button> </div>';
     }  ?>
 </div>
 </body>

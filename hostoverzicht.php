@@ -48,7 +48,7 @@ if($_SESSION['settings_id_set'] == false){
         
             <?php
             //FIND THE PLAYERS FOREIGN ID KEY IN PLAYER_GAME USING THE GAME_ID STORED IN SESSION
-            $sql ="SELECT player_id_fk FROM pokerDb.player_game WHERE game_id = '{$_SESSION['session_game_id']}' ";
+            $sql ="SELECT player_id_fk FROM pokerDb.player_game WHERE game_id = '{$_SESSION['session_game_id']}' AND active=1 ";
             $stmt= $pdo->query($sql);
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
             {
@@ -86,7 +86,7 @@ if($_SESSION['settings_id_set'] == false){
                 include 'classes/playerrand.php'; // shuffle
             }
              //GET PLAYER FOREIGN KEY FROM PLAYER GAME
-             $sql ="SELECT player_id_fk FROM pokerDb.player_game WHERE game_id = '{$_SESSION['session_game_id']}' AND pokerDb.player_game.tafel = '{$_SESSION['table']}' ";
+             $sql ="SELECT player_id_fk FROM pokerDb.player_game WHERE game_id = '{$_SESSION['session_game_id']}' AND pokerDb.player_game.tafel = '{$_SESSION['table']}' AND active=1 ";
              $stmt= $pdo->query($sql);
              while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
              {
