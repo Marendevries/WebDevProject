@@ -325,3 +325,7 @@ Body {
     margin-left: 50px;
     float: right;
 }
+
+input[type=checkbox] {
+    transform: scale(1.8);
+}

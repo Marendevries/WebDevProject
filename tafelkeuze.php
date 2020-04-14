@@ -12,21 +12,25 @@ if($_SESSION['is_host'] != true )
 if ($_SERVER['REQUEST_METHOD'] == "POST"){
     if (isset($_POST['t1'])){
         $_SESSION['table'] = 1;
+        header("Location: hostoverzicht.php");
     }
     if (isset($_POST['t2'])){
         $_SESSION['table'] = 2;
+        header("Location: hostoverzicht.php");
     }
     if (isset($_POST['t3'])){
         $_SESSION['table'] = 3;
+        header("Location: hostoverzicht.php");
     }
     if (isset($_POST['t4'])){
         $_SESSION['table'] = 4;
+        header("Location: hostoverzicht.php");
     }
     if (isset($_POST['t5'])){
         $_SESSION['table'] = 5;
+        header("Location: hostoverzicht.php");
     }
 }
-
 ?>
 
 <!DOCTYPE html>

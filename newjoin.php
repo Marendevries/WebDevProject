@@ -71,7 +71,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <link rel="stylesheet" href="stylesheet.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <head>
-    <title>Page Title</title>
+    <title>New user join game</title>
 </head>
 <body>
 <div class="container">

@@ -59,12 +59,12 @@ if($_SESSION['settings_id_set'] == false){
                 while($row2 = $stmt2->fetch(PDO::FETCH_ASSOC))
                 {
                     //PRINT NAME WHILE STMT2 RETURNS TRUE
-                    echo '<img src="Afbeeldingen/person.png"> '.$row2['name'].' </i><button class=edit>aanpassen </button><br>';
+                    echo '<form action="playeredit.php" method="POST"><img src="Afbeeldingen/person.png"> '.$row2['name'].' </i><input type="hidden" value='.$row2['name'].' name="rebuy_name"><button style="float: right" type="submit"class=edit>aanpassen</button></form><br>';
                 }
             }
             ?>
         </div>
-    </div>
+</div>
     <div class="card">
         <div class="card-body menu">
             <h5 class="card-title">Opties</h5>
@@ -72,8 +72,8 @@ if($_SESSION['settings_id_set'] == false){
             <a href="tijdmenu.php"><button class=Menuknop>Tijd</button></a><br>
             <a href="fiches.php"><button class=Menuknop>Waarde fiches</button></a><br>
             <a href="blinds.php"><button class=Menuknop>Blinds</button></a><br>
-            <a href="Spelregels.html"><button class=Menuknop>Spelregels</button></a><br>    
-            <button class=Menuknop>Spel starten</button><br>        
+            <a href="Spelregels.php"><button class=Menuknop>Spelregels</button></a><br>
+            <form action="hostoverzicht.php" method="POST"><button onclick="return confirm('Weet je zeker dat je de actieve spelers opnieuw wilt indelen?')" class=Menuknop>Verdeel spelers</button></form><br>        
             <a href="hoofdmenu.php"><button onclick="return confirm('Weet je zeker dat je wilt stoppen?')" class=Menuknop>Stoppen</button></a><br>
         </div>
     </div>
@@ -81,21 +81,25 @@ if($_SESSION['settings_id_set'] == false){
         <div class="card-body">
             <h5 class="card-title"><?php echo "Table=", $_SESSION['table'] ?></h5>
             <?php
-            include 'classes/playerrand.php'; // shuffle
-            //GET PLAYER FOERIGN KEY FROM PLAYER GAME
-            $sql ="SELECT player_id_fk FROM pokerDb.player_game WHERE game_id = '{$_SESSION['session_game_id']}' AND pokerDb.player_game.tafel = '{$_SESSION['table']}' ";
-            $stmt= $pdo->query($sql);
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+            //IF SPEL STARTEN IS CLICKED SHUFFLE PLAYERS
+            if($_SERVER['REQUEST_METHOD'] == 'POST')
             {
-                //GET PLAYER DATA USING FOREIGN KEY
-                $sql2 = "SELECT * FROM pokerDb.player_data WHERE player_id = '{$row['player_id_fk']}'";
-                $stmt2= $pdo->query($sql2);
-                while($row2 = $stmt2->fetch(PDO::FETCH_ASSOC))
-                {
-                    //PRINT NAMES WHILE STMT2 IS TRUE
-                    echo '<img src="Afbeeldingen/person.png"> '.$row2['name'].' </i><button class=edit>aanpassen </button><br>';
-                }
+                include 'classes/playerrand.php'; // shuffle
             }
+             //GET PLAYER FOREIGN KEY FROM PLAYER GAME
+             $sql ="SELECT player_id_fk FROM pokerDb.player_game WHERE game_id = '{$_SESSION['session_game_id']}' AND pokerDb.player_game.tafel = '{$_SESSION['table']}' ";
+             $stmt= $pdo->query($sql);
+             while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+             {
+                 //GET PLAYER DATA USING FOREIGN KEY
+                 $sql2 = "SELECT * FROM pokerDb.player_data WHERE player_id = '{$row['player_id_fk']}'";
+                 $stmt2= $pdo->query($sql2);
+                 while($row2 = $stmt2->fetch(PDO::FETCH_ASSOC))
+                 {
+                     //PRINT NAMES WHILE STMT2 IS TRUE
+                     echo '<form action="playeredit.php" method="POST"><img src="Afbeeldingen/person.png"> '.$row2['name'].' </i><input type="hidden" value='.$row2['name'].' name="rebuy_name"><button style="float: right" type="submit"class=edit>aanpassen</button></form><br>';
+                 }
+             }
             ?>
         </div>
     </div>
