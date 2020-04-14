@@ -1,7 +1,6 @@
 <?php
 session_start();
 include "classes\config.php";
-require "classes\user.php";
 
 if($_SESSION['is_host'] != true )
 {
@@ -68,6 +67,7 @@ if($_SESSION['settings_id_set'] == false){
     <div class="card">
         <div class="card-body menu">
             <h5 class="card-title">Opties</h5>
+            <title>Poker Management</title>
             <a href="tafelkeuze.php"><button class=Menuknop>Tafel Selecteren</button></a><br>
             <a href="fiches.php"><button class=Menuknop>Waarde fiches</button></a><br>
             <a href="blinds.php"><button class=Menuknop>Blinds</button></a><br>

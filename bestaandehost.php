@@ -2,7 +2,6 @@
 
 session_start();
 include "classes\config.php";
-require "classes\user.php";
 
 if($_SESSION['is_host'] == true){
     header("Location: hostoverzicht.php");
@@ -11,7 +10,7 @@ if($_SESSION['is_player'] == true){
     header("Location: speleroverzicht.php");
 }
 
-$input_err = $input = "";
+$input = "";
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty(trim($_POST["hostname"]))) {

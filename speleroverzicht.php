@@ -1,7 +1,6 @@
 <?php
 session_start();
 include "classes/config.php";
-require "classes/user.php";
 
 if($_SESSION['is_player'] != true )
 {
@@ -16,6 +15,7 @@ if(!isset($_SESSION['table'])){
 <!DOCTYPE html>
 <html>
 <head>
+<title>Poker Management</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheet.css">
