@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (!isset($_SESSION['test'])){
+    $_SESSION['test'] = false;
+}
 if (!isset($_SESSION['is_host'])){
     $_SESSION['is_host'] = false;
 }
@@ -22,11 +25,17 @@ if (!isset($_SESSION['is_player'])){
         <button class="Knop" name="HostToernooi" onClick="document.location.href='hostmenu.php'"> Host Toernooi </button>
     </div>
     <div><button class="Knop" name="JoinToernooi" onClick="document.location.href='spelermenu.php'">Join Toernooi</button> </div>
-    <?php if (isset($_SESSION['session_game_id'])){
+    <?php if (isset($_SESSION['session_game_id']) && $_SESSION['test'] == false){
         echo     '<div><button class="Knop"name="destroy" onClick="document.location.href=\'destroy.php\'">Verlaat spel(Host blijft)</button> </div>';
     }  ?>
-        <?php if ($_SESSION['is_host'] != false){
+        <?php if ($_SESSION['is_host'] != false && $_SESSION['test'] == false){
         echo     '<div><button class="Knop"name="destroyhost" onClick="document.location.href=\'destroyhost.php\'">Eindig Toernooi</button> </div>';
+    }  ?>
+            <?php if ($_SESSION['test'] == true){
+        echo     '<div><button class="Knop"name="destroytest" onClick="document.location.href=\'destroytest.php\'">TEST END</button> </div>';
+    }  ?>
+                <?php if ($_SESSION['test'] == true){
+        echo     '<div><button class="Knop"name="destroytest" onClick="document.location.href=\'destroy.php\'">TEST END TRUE</button> </div>';
     }  ?>
 </div>
 </body>

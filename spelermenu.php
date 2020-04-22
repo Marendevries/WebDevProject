@@ -14,6 +14,8 @@
 <div class="container">
     <div><button class="Knop" onClick="document.location.href='newjoin.php'">Nieuwe speler</button> </div>
     <div><button class="Knop" onClick="document.location.href='bestaandejoin.php'">Bestaand speler</button> </div>
+    <div><button class="Knop" onClick="document.location.href='testjoin.php'">Test Insert Player</button> </div>
+    <div><button class="Knop" onClick="document.location.href='testplayerjoin.php'">Test Player Omgeving</button> </div>
     <div><button class="Knop" onClick="document.location.href='hoofdmenu.php'">Terug</button></div>
 </div>
 </body>
